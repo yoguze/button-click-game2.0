@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ボタンクリックゲーム</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- タイトル画面 -->
+  <div id="titleScreen" class="container screen">
+    <h1>ボタンクリックゲーム</h1>
+    <p>ハイスコア: <span id="highScore">0</span></p>
+    <button id="startBtn">ゲームスタート</button>
+  </div>
+
+  <!-- マッチング画面 -->
+  <div id="matchScreen" class="container screen hidden">
+    <p id="matchMessage">対戦相手を探しています…</p>
+    <p>スタートまで: <span id="countdown">12</span> 秒</p>
+  </div>
+
+  <!-- ゲーム画面 -->
+  <div id="gameScreen" class="container screen hidden">
+    <div class="status">
+      <p>Player A: <span id="scoreA">0</span></p>
+      <p>Player B: <span id="scoreB">0</span></p>
+      <p>残り時間: <span id="timeLeft">30</span> 秒</p>
+    </div>
+    <div class="controls">
+      <button id="clickButton" disabled>押す！</button>
+    </div>
+    <p id="message" class="message"></p>
+  </div>
+
+  <!-- 結果画面 -->
+  <div id="resultScreen" class="container screen hidden">
+    <p id="resultMessage"></p>
+    <button id="backToTitle">タイトルに戻る</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

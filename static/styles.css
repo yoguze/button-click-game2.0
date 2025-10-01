@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  margin: 0;
+  color: #222;
+  background: #f6f7fb;
+}
+.container {
+  max-width: 560px;
+  margin: 8vh auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+h1 { margin: 0 0 10px; font-size: 28px; }
+.status p { margin: 6px 0; font-size: 16px; }
+.controls { margin-top: 20px; display: flex; gap: 12px; justify-content: center; }
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform .04s ease, opacity .2s ease;
+}
+#startBtn { background: #4753ff; color: #fff; }
+#clickButton { background: #00c27a; color: #fff; }
+#backToTitle { background: #ff7f50; color: #fff; }
+button:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+button:active:not(:disabled) { transform: translateY(1px); }
+.message { margin-top: 14px; min-height: 24px; }
+
+/* 画面切り替え用クラス */
+.screen.hidden {
+  display: none;
+}
