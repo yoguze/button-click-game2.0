@@ -66,7 +66,7 @@ def game_timer(room_id):
                 socketio.emit('game_over', {'scores': game['scores'], 'winner': winner, 'role': role}, to=sid)
             del games[room_id]
             return
-        socketio.sleep(1)
+        socketio.sleep(0.25)
 
 # ----------------------
 # Socket.IO イベント
